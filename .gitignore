@@ -1,0 +1,36 @@
+# Helm chart dependencies
+charts/*/charts/
+charts/*/Chart.lock
+
+# Helm packaging (allow root level .tgz files for GitHub Pages)
+charts/*/*.tgz
+charts/*/*/*.tgz
+
+# Local development files
+.values.local.yaml
+values.local.yaml
+**/values.local.yaml
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Claude Code configuration
+CLAUDE.md

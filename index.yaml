@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  common:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2025-08-12T15:32:40.269592445Z"
+    description: A Helm library chart with common templates for reuse across multiple
+      charts
+    digest: 67d3184aef7f513ff9c39f80c0b34c74200ae9a0e73be239710dcb900688a33f
+    name: common
+    type: library
+    urls:
+    - common-0.2.1.tgz
+    version: 0.2.1
+generated: "2025-08-12T15:32:40.269640635Z"

@@ -1,0 +1,6 @@
+owner: Eikon-Solutions
+git-repo: helm-charts
+charts-dir: charts
+index-path: index.yaml
+packages-with-index: true
+release-name-template: "{{ .Name }}-{{ .Version }}"

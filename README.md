@@ -117,6 +117,89 @@ configMaps:
         contentsB64: <base64-encoded-content>
 ```
 
+## Using This Repository
+
+### Adding the Repository
+```bash
+# Add this repository to Helm
+helm repo add eikon-charts https://Eikon-Solutions.github.io/helm-charts
+
+# Update repository index
+helm repo update
+
+# Install a chart from the repository
+helm install my-app eikon-charts/web-service
+```
+
+### Available Charts
+```bash
+# List all available charts
+helm search repo eikon-charts
+
+# Show chart information
+helm show chart eikon-charts/web-service
+helm show values eikon-charts/web-service
+```
+
+## Releasing New Versions
+
+### For Chart Maintainers
+
+This repository uses automated releases via GitHub Actions. New chart versions are published automatically when changes are pushed to the `main` branch.
+
+#### Release Process
+
+1. **Update Chart Version:**
+   ```bash
+   # Edit charts/<chart-name>/Chart.yaml and bump the version
+   # Follow semantic versioning (e.g., 0.1.0 -> 0.1.1 for patches, 0.2.0 for features)
+   ```
+
+2. **Create Release Commit:**
+   ```bash
+   git add charts/<chart-name>/Chart.yaml
+   git commit -m "chore: bump <chart-name> to v<version>"
+   git push origin main
+   ```
+
+3. **Automated Release:**
+   - GitHub Actions will automatically detect the version change
+   - Charts are packaged and uploaded as GitHub releases
+   - The repository index (`index.yaml`) is updated
+   - Charts become available via `helm repo add`
+
+#### Manual Release (if needed)
+```bash
+# Build chart dependencies
+helm dependency build charts/<chart-name>
+
+# Package the chart
+helm package charts/<chart-name>
+
+# Update repository index
+helm repo index . --url https://Eikon-Solutions.github.io/helm-charts
+
+# Commit and push changes
+git add index.yaml *.tgz
+git commit -m "release: <chart-name> v<version>"
+git push origin main
+```
+
+#### Release Checklist
+
+- [ ] Chart version bumped in `Chart.yaml`
+- [ ] Changes documented in chart README or values comments
+- [ ] Chart validates with `helm lint charts/<chart-name>`
+- [ ] Templates render correctly with `helm template test charts/<chart-name>`
+- [ ] Dependencies updated if needed (`helm dependency update`)
+- [ ] Commit follows conventional commits format
+
+#### Version Strategy
+
+- **Patch (0.1.0 -> 0.1.1):** Bug fixes, security updates, minor improvements
+- **Minor (0.1.0 -> 0.2.0):** New features, additional configuration options
+- **Major (0.1.0 -> 1.0.0):** Breaking changes, incompatible API changes
+
 ## License
 
 See [LICENSE](LICENSE) file for details.

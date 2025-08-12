@@ -2,8 +2,9 @@
 charts/*/charts/
 charts/*/Chart.lock
 
-# Helm packaging
-*.tgz
+# Helm packaging (allow root level .tgz files for GitHub Pages)
+charts/*/*.tgz
+charts/*/*/*.tgz
 
 # Local development files
 .values.local.yaml

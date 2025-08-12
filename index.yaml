@@ -12,4 +12,20 @@ entries:
     urls:
     - common-0.2.1.tgz
     version: 0.2.1
-generated: "2025-08-12T15:32:40.269640635Z"
+  web-service:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2025-08-12T15:35:59.54498057Z"
+    dependencies:
+    - name: common
+      repository: https://eikon-solutions.github.io/helm-charts
+      version: 0.2.1
+    description: A Helm chart for deploying web services with deployment, service,
+      and ingress
+    digest: 568f8f46f8cc6ad07d80d3d79a3a66c1a066f713e1399be56fcc734403fe442e
+    name: web-service
+    type: application
+    urls:
+    - web-service-0.3.0.tgz
+    version: 0.3.0
+generated: "2025-08-12T15:35:59.544990228Z"

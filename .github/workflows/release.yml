@@ -40,7 +40,7 @@ jobs:
         with:
           charts_dir: charts
           config: cr.yaml
-          pages_branch: main
+          pages_branch: gh-pages
           skip_existing: true
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

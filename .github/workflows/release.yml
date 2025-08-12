@@ -31,10 +31,6 @@ jobs:
         with:
           version: v3.14.4
 
-      - name: Add dependency chart repos and build dependencies
-        run: |
-          helm dependency build charts/web-service
-
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
         with:
